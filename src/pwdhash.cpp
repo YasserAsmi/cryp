@@ -60,9 +60,9 @@ bool PwdHash::validatePassword(const std::string& password, const std::string& c
     std::string saltbytes = Base64::decode(splt.get());
     std::string correcthashbytes = Base64::decode(splt.get());
 
-    //dbglog("iter=%d \n", iterations);
-    //dbghex("correct salt", saltbytes.c_str(), saltbytes.size());
-    //dbghex(">>Correct hash", correcthashbytes.c_str(), correcthashbytes.size());
+    dbglog("iter=%d \n", iterations);
+    dbghex("correct salt", saltbytes.c_str(), saltbytes.size());
+    dbghex(">>Correct hash", correcthashbytes.c_str(), correcthashbytes.size());
 
     // Calculate new test hash using the provided password, extracted salt, and extracted iteration count
 

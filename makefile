@@ -1,3 +1,3 @@
-DIRS = src
+DIRS = src test
 
 include build.mk
