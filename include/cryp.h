@@ -13,6 +13,8 @@
 #include <openssl/md5.h>
 #include <openssl/hmac.h>
 
+#include "cryputil.h"
+
 // Internal: Use Base64 class instead
 std::string base64_encode(unsigned char const* , unsigned int len);
 std::string base64_decode(std::string const& s);

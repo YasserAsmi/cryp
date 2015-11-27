@@ -6,10 +6,6 @@
 #include <openssl/rand.h>
 
 #include "cryp.h"
-#include "util.h"
-#include "str.h"
-
-using namespace jvar;
 
 namespace cryp
 {
@@ -32,7 +28,7 @@ bool PwdHash::createHash(const std::string& password, std::string& genhash)
         dbgerr("Failed to generate salt\n");
         return false;
     }
-    //dbghex("salt", salt, sizeof(salt));
+    dbghex("salt", salt, sizeof(salt));
 
     // Generate the hash.
 
@@ -66,7 +62,7 @@ bool PwdHash::validatePassword(const std::string& password, const std::string& c
 
     //dbglog("iter=%d \n", iterations);
     //dbghex("correct salt", saltbytes.c_str(), saltbytes.size());
-    dbghex(">>Correct hash", correcthashbytes.c_str(), correcthashbytes.size());
+    //dbghex(">>Correct hash", correcthashbytes.c_str(), correcthashbytes.size());
 
     // Calculate new test hash using the provided password, extracted salt, and extracted iteration count
 
